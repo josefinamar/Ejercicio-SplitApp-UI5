@@ -1,0 +1,25 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run EjercicioSplitApp-EjercicioSplitApp",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/ejerciciosplitapp-approuter/node_modules/@sap/html5-repo-mock/index.js",
+      "args": [
+        "--standalone",
+        "/EjercicioSplitAppEjercicioSplitApp/index.html",
+        "--ui5",
+        "{\"version\":\"1.84.9\"}"
+      ],
+      "cwd": "${workspaceFolder}/EjercicioSplitApp",
+      "env": {
+        "PORT": "6004",
+        "MOCK_LOOKUP_DIRS": "[\"webapp\"]",
+        "run.config": "{\"handlerId\":\"ui5_run_config_handler_id\",\"runnableId\":\"/home/user/projects/EjercicioSplitApp/EjercicioSplitApp\"}"
+      },
+      "envFile": "${workspaceFolder}/EjercicioSplitApp/.env1",
+      "preLaunchTask": "Build EjercicioSplitApp"
+    }
+  ]
+}

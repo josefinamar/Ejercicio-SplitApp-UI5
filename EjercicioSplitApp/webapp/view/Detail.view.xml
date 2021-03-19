@@ -1,0 +1,31 @@
+<mvc:View controllerName="EjercicioSplitApp.EjercicioSplitApp.controller.Detail" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form">
+	
+    <Page
+		id="idDetail"
+		title="{i18n>titleDetail}"
+		backgroundDesign= "Solid"
+		class="sapUiStdPage">
+            <content>
+                <f:SimpleForm id="idDetailForm" editable="false" title="{i18n>titleDetailForm}" >
+                    <f:content>
+                        <Label text="{i18n>detailLabelNombre}" />
+                        <Text text="{productoSeleccionado>/nombre_producto}" />
+
+                        <Label text="{i18n>detailLabelCodProducto}" />
+                        <Text text="{productoSeleccionado>/codigo_producto}" />
+
+                        <Label text="{i18n>detailLabelDescProducto}" />
+                        <Text text="{productoSeleccionado>/desc_producto}" />
+
+                        <Label text="{i18n>detailLabelEmpresa}" />
+                        <Text  text="{productoSeleccionado>/nombre_empresa}" />
+                        
+                        <Label text="{i18n>detailLabelOrigen}" />
+                        <Text text="{productoSeleccionado>/origen}" />
+                    </f:content>
+		        </f:SimpleForm>
+            </content>
+	</Page>
+	
+                    
+</mvc:View>

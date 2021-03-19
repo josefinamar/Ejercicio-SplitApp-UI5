@@ -1,0 +1,11 @@
+<mvc:View controllerName="EjercicioSplitApp.EjercicioSplitApp.controller.App" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+	
+    <SplitApp
+		id="idSplitApp"
+		initialDetail="detail"
+		initialMaster="master"
+		orientationChange=".onOrientationChange">
+	
+	</SplitApp>
+
+</mvc:View>

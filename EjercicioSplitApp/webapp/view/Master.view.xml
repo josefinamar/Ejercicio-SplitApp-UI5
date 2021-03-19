@@ -1,0 +1,16 @@
+<mvc:View controllerName="EjercicioSplitApp.EjercicioSplitApp.controller.Master" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+	
+   <Page
+		id="idMaster"
+		title="{i18n>titleMaster}"
+	    backgroundDesign= "List"
+		class="sapUiStdPage">
+			<List mode="SingleSelectMaster" selectionChange="onListItemPress" itemPress=".onListItemPress" items="{modeloProductos>/value}"> 
+				<items>
+					<StandardListItem title="{modeloProductos>nombre_producto}" type="Active" press="onListItemPress"/>
+				</items>
+			</List>
+	</Page>
+          
+                    
+</mvc:View>

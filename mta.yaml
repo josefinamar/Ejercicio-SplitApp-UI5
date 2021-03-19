@@ -1,0 +1,50 @@
+_schema-version: "3.2"
+ID: EjercicioSplitApp
+version: 0.0.1
+modules:
+- name: ejerciciosplitapp-approuter
+  type: approuter.nodejs
+  path: ejerciciosplitapp-approuter
+  requires:
+  - name: EjercicioSplitApp_html_repo_runtime
+  parameters:
+    disk-quota: 256M
+    memory: 256M
+- name: EjercicioSplitApp_ui_deployer
+  type: com.sap.application.content
+  path: .
+  requires:
+  - name: EjercicioSplitApp_html_repo_host
+    parameters:
+      content-target: true
+  build-parameters:
+    build-result: resources
+    requires:
+    - artifacts:
+      - EjercicioSplitApp-content.zip
+      name: EjercicioSplitApp
+      target-path: resources/
+- name: EjercicioSplitApp
+  type: html5
+  path: EjercicioSplitApp
+  build-parameters:
+    builder: custom
+    commands:
+    - npm run build
+    supported-platforms: []
+resources:
+- name: EjercicioSplitApp_html_repo_runtime
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: html5-apps-repo
+    service-plan: app-runtime
+- name: EjercicioSplitApp_html_repo_host
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: html5-apps-repo
+    service-plan: app-host
+build-parameters:
+  before-all:
+  - builder: custom
+    commands:
+    - npm install
